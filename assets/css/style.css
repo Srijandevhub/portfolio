@@ -1,0 +1,331 @@
+* {
+    box-sizing: border-box;
+}
+body {
+    margin: 0;
+    padding: 0;
+    font: 400 16px/24px 'Inter', sans-serif;
+    color: #4B5563;
+}
+h1 {
+    font-size: 60px;
+    line-height: 72px;
+    letter-spacing: -1.2px;
+    color: #111827;
+    margin: 0;
+    padding-bottom: 20px;
+}
+p {
+    margin: 0;
+    padding-bottom: 20px;
+}
+.container {
+    max-width: 1240px;
+    padding: 0 15px;
+    margin: 0 auto;
+}
+
+.row {
+    display: flex;
+    flex-wrap: wrap;
+    margin: 0 -15px;
+}
+.col-8, .col-4 {
+    flex: 0 0 auto;
+    max-width: 100%;
+    min-height: 1px;
+    padding: 0 15px;
+}
+.col-8 {
+    width: 60%;
+}
+.col-4 {
+    width: 40%;
+}
+
+
+
+
+
+
+
+
+/*Header*/
+.pg-header-layout {
+    width: 100%;
+}
+.navbar {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 20px 0;
+}
+.navbar-brand {
+    display: inline-block;
+    width: 92px;
+}
+.navbar-brand img {
+    max-width: 100%;
+}
+.navbar-toggler {
+    display: none;
+}
+.navbar-content {
+    display: flex;
+    align-items: center;
+}
+.navbar-menu {
+    display: flex;
+    margin: 0;
+    padding: 0;
+}
+.navbar-menu li {
+    list-style: none;
+    padding-right: 24px;
+    font-size: 16px;
+    line-height: 24px;
+    font-weight: 500;
+}
+.navbar-menu li:last-child {
+    padding-right: 0;
+}
+.navbar-menu li a {
+    display: inline-block;
+    color: #4B5563;
+    text-decoration: none;
+}
+.header-btn {
+    display: flex;
+    min-width: 136px;
+    min-height: 36px;
+    background: #111827;
+    align-items: center;
+    justify-content: center;
+    border-radius: 12px;
+    color: #fff;
+    font-size: 16px;
+    line-height: 24px;
+    font-weight: 500;
+    padding: 5px;
+    text-decoration: none;
+    margin-left: 24px;
+    position: relative;
+    overflow: hidden;
+}
+.header-btn::before {
+    content: "";
+    width: 100%;
+    height: 100%;
+    background: radial-gradient(circle, rgba(255,255,255,0.3) 35%, rgba(0,212,255,0) 100%);
+    position: absolute;
+    top: 0;
+    left: -100%;
+    transition: 0.3s ease-in-out;
+}
+.header-btn:hover::before {
+    left: 100%;
+}
+
+
+/*Hero*/
+.pg-hero-layout {
+    width: 100%;
+    padding: 120px 0 60px;
+}
+.hero-list {
+    padding: 0;
+    margin: 0;
+}
+.hero-list li {
+    list-style: none;
+    margin-bottom: 15px;
+}
+.hero-list li i {
+    margin-right: 10px;
+}
+.online {
+    width: 12px;
+    height: 12px;
+    display: inline-block;
+    background: #10B981;
+    margin-right: 10px;
+    border-radius: 50%;
+}
+.hero-image {
+    position: relative;
+    padding-right: 110px;
+    height: 380px;
+}
+.hero-image::before {
+    content: "";
+    background: #E5E7EB;
+    width: 280px;
+    height: 320px;
+    position: absolute;
+    right: 0;
+    bottom: -40px;
+    z-index: 1;
+}
+.hero-image img {
+    width: 100%;
+    height: 100%;
+    border: 10px solid #fff;
+    position: relative;
+    z-index: 2;
+    border-radius: 12px;
+}
+
+
+
+
+@media (min-width: 1200px) and (max-width: 1399px) {
+    .container {
+        max-width: 1170px;
+    }
+    h1 {
+        font-size: 50px;
+        line-height: 62px;
+    }
+}
+
+@media (min-width: 992px) and (max-width: 1199px) {
+    .container {
+        max-width: 960px;
+    }
+    h1 {
+        font-size: 40px;
+        line-height: 52px;
+    }
+    .pg-hero-layout .col-8, .pg-hero-layout .col-4 {
+        width: 50%;
+    }
+    .pg-hero-layout {
+        padding: 60px 0;
+    }
+}
+
+@media only screen and (max-width: 991px) {
+    .container {
+        max-width: 750px;
+    }
+
+    /*Header*/
+    .pg-header-layout .container {
+        max-width: 100%;
+        padding: 0;
+    }
+    .navbar-toggler {
+        display: inline-block;
+        margin-right: 15px;
+        border: none;
+        background: transparent;
+        padding: 0;
+        position: relative;
+        z-index: 20;
+    }
+    .bar {
+        display: block;
+        width: 30px;
+        height: 3px;
+        background: #4B5563;
+        margin: 5px 0;
+        transition: 0.3s ease;
+    }
+    .navbar-toggler.show .bar:nth-child(2) {
+        display: none;
+    }
+    .navbar-toggler.show .bar:nth-child(1) {
+        transform: rotate(45deg) translate(5px, 8px);
+    }
+    .navbar-toggler.show .bar:nth-child(3) {
+        transform: rotate(-45deg) translate(-3px, -2px);
+    }
+    .navbar-content {
+        position: absolute;
+        width: 300px;
+        height: 100vh;
+        top: 0;
+        left: -350px;
+        background: #fff;
+        z-index: 10;
+        flex-direction: column;
+        box-shadow: 0px 0px 5px 4px rgba(0,0,0,0.12);
+        align-items: flex-start;
+        padding-top: 40px;
+        padding-left: 10px;
+        padding-right: 10px;
+        transition: 0.4s ease-in;
+    }
+    .navbar-content.show {
+        left: 0;
+    }
+    .navbar-brand {
+        margin-left: 15px;
+        width: 80px;
+        padding-top: 5px;
+    }
+    .navbar-menu {
+        flex-direction: column;
+    }
+    .navbar-menu li {
+        padding: 0;
+    }
+    .navbar-menu li a {
+        width: 100%;
+        padding: 5px 12px;
+        margin: 5px 0;
+    }
+    .header-btn {
+        margin-left: 0;
+        margin-top: 25px;
+        width: 100%;
+    }
+
+    h1 {
+        font-size: 36px;
+        line-height: 48px;
+    }
+    .pg-hero-layout .col-8, .pg-hero-layout .col-4 {
+        width: 100%;
+    }
+    .pg-hero-layout .col-4 {
+        width: 60%;
+        margin: 0 auto 50px;
+    }
+    .pg-hero-layout .row {
+        flex-direction: column-reverse;
+    }
+    .pg-hero-layout {
+        padding: 50px 0;
+    }
+}
+
+@media only screen and (max-width: 767px) {
+    .container {
+        max-width: 100%;
+    }
+    .pg-hero-layout .col-4 {
+        width: 80%;
+    }
+}
+
+@media only screen and (max-width: 575px) {
+    .pg-hero-layout .col-4 {
+        width: 100%;
+        margin-bottom: 20px;
+    }
+    .hero-image::before {
+        display: none;
+    }
+    .hero-image {
+        padding: 0;
+    }
+    h1 {
+        font-size: 30px;
+        line-height: 42px;
+    }
+    .pg-hero-layout {
+        padding: 0 0 50px;
+    }
+}
